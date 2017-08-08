@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
 
+## Setup
+
+- NodeJS v7.10.
+- AngularCLI 1.0.4
+
 ## Tableau Simulator
 
 To test the tableau Web Data Connector capabilities download and run the Tableau Simulator from here `http://tableau.github.io/webdataconnector/docs/`
