@@ -1,4 +1,4 @@
-import '../assets/js/tableauwdc-2.0.latest.js';
+import '../assets/js/tableauwdc-2.0.latest';
 
 declare const tableau: any;
 
