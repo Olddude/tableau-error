@@ -7,5 +7,8 @@ import './utils/tableau-initialization';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  public fakeId: number;
+  constructor() {
+    this.fakeId = Math.random();
+  }
 }

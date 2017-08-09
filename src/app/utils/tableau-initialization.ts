@@ -1,18 +1,16 @@
 import '../../assets/js/tableauwdc-2.0.latest';
 
-declare const tableau: any;
-
-const tableauConnector = tableau.makeConnector();
+const tableauConnector = window['tableau'].makeConnector();
 
 tableauConnector.getSchema = function (schemaCallback) {
-  const schema = JSON.parse(tableau.connectionData).schema;
+  const schema = JSON.parse(window['tableau'].connectionData).schema;
   schemaCallback([schema]);
 };
 
 tableauConnector.getData = function (table, doneCallback) {
-  const data = JSON.parse(tableau.connectionData).data;
+  const data = JSON.parse(window['tableau'].connectionData).data;
   table.appendRows(data);
   doneCallback();
 };
 
-tableau.registerConnector(tableauConnector);
+window['tableau'].registerConnector(tableauConnector);

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-declare const tableau: any;
-
 @Component({
   selector: 'app-tableau',
   templateUrl: './tableau.component.html',
@@ -12,18 +10,15 @@ export class TableauComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  public tableauSubmit(): void {
-    tableau.connectionName = 'testconnection';
-    tableau.connectionData = JSON.stringify({
+    window['tableau'].connectionName = 'testconnection';
+    window['tableau'].connectionData = JSON.stringify({
       schema: {
-        id: tableau.connectionName,
-        alias: tableau.connectionName + ' data',
+        id: window['tableau'].connectionName,
+        alias: window['tableau'].connectionName + ' data',
         columns: [
-          {id: 'date', alias: 'date', dataType: tableau.dataTypeEnum.datetime},
-          {id: 'value', alias: 'value', dataType: tableau.dataTypeEnum.float},
-          {id: 'unit', alias: 'unit', dataType: tableau.dataTypeEnum.string}
+          {id: 'date', alias: 'date', dataType: window['tableau'].dataTypeEnum.datetime},
+          {id: 'value', alias: 'value', dataType: window['tableau'].dataTypeEnum.float},
+          {id: 'unit', alias: 'unit', dataType: window['tableau'].dataTypeEnum.string}
         ]
       },
       data: [
@@ -33,6 +28,9 @@ export class TableauComponent implements OnInit {
         { date: '2017-01-01T15:00:00', value: 0.83, unit: 'foo' }
       ]
     });
-    tableau.submit();
+  }
+
+  public tableauSubmit(): void {
+    window['tableau'].submit();
   }
 }

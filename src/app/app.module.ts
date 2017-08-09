@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { TableauComponent } from './tableau/tableau.component';
 
 const routes: Routes = [
-  { path: 'tableau', component: TableauComponent }
+  { path: 'tableau/:id', component: TableauComponent }
 ];
 
 @NgModule({
