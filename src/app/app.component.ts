@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import '../utils/tableau-initialization';
+import './utils/tableau-initialization';
 
 @Component({
   selector: 'app-root',

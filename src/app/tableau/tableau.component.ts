@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var tableau: any;
+declare const tableau: any;
 
 @Component({
   selector: 'app-tableau',
@@ -16,7 +16,7 @@ export class TableauComponent implements OnInit {
 
   public tableauSubmit(): void {
     tableau.connectionName = 'testconnection';
-    tableau.connectionData = {
+    tableau.connectionData = JSON.stringify({
       schema: {
         id: tableau.connectionName,
         alias: tableau.connectionName + ' data',
@@ -32,7 +32,7 @@ export class TableauComponent implements OnInit {
         { date: '2017-01-01T14:00:00', value: 0.73, unit: 'foo' },
         { date: '2017-01-01T15:00:00', value: 0.83, unit: 'foo' }
       ]
-    };
+    });
     tableau.submit();
   }
 }
