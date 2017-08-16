@@ -9,6 +9,6 @@ import './utils/tableau-initialization';
 export class AppComponent {
   public fakeId: number;
   constructor() {
-    this.fakeId = Math.random();
+    this.fakeId = 23;
   }
 }
